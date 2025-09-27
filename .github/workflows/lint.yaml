@@ -1,0 +1,23 @@
+name: Lint
+on: 
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v5
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install depen
+        run: bun i
+      - name: lint
+        run: bun run lint
