@@ -9,18 +9,24 @@ on:
   pull_request:
     types:
       - opened
+# env:
+#   BUN_VERSION: 1.2.18
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Print Bun version
+        run: echo "Bun version:${{ vars.BUN_VERSION }}"
+      - name: Print Api KEY
+        run: echo "API_KEY:${{ secrets.API_KEY }}"
       - name: Clone repo
         uses: actions/checkout@v5
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version: ${{ vars.BUN_VERSION }}
       - name: Caching
-        uses: actions/cache@v4
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.bun/install/cache
