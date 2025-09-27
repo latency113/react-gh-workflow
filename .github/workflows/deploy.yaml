@@ -23,8 +23,7 @@ jobs:
         run: bun run lint
 
   deploy:
-    needs: 
-      - lint
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Clone repo
