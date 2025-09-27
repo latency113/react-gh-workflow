@@ -31,7 +31,7 @@ jobs:
           path: dist/
   deploy:
     needs: 
-        - lint
+        - build
     runs-on: ubuntu-latest
     steps:
       - name: Download-dist
