@@ -26,7 +26,7 @@ jobs:
         run: bun run build
       - name: Upload dist
         run: actions/upload-artifact@v4
-        with:
+      - with:
           name: dist-folder
           path: dist/
   deploy:
@@ -37,7 +37,7 @@ jobs:
       - name: Download-dist
         uses: actions/download-artifact@v4
         with:
-          - name: dist-folder
-            path: dist/
+            name: dist-folder
+            path: dist
       - name: Deploy
         run: echo "deployyyyyyyy"
