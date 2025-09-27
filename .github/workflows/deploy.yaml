@@ -24,9 +24,11 @@ jobs:
         run: bun i
       - name: Build
         run: bun run build
+      - name: List dist/
+        run: ls dist
       - name: Upload dist
         uses: actions/upload-artifact@v4
-      - with:
+        with:
           name: dist-folder
           path: dist/
   deploy:
