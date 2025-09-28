@@ -14,5 +14,28 @@ inputs:
     description: surge domain
     required: true
 runs:
-  using: node24
-  main: dist-folder/index.js
+name: Deploy to Surge
+description: Deploy React app to Surge
+inputs:
+  token:
+    description: "Surge token"
+    required: true
+  email:
+    description: "Surge email"
+    required: true
+  dist-folder:
+    description: "Build folder"
+    required: true
+  domain:
+    description: "Surge domain"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install Surge
+      run: npm install -g surge
+
+    - name: Deploy
+      run: surge ${{ inputs.dist-folder }} ${{ inputs.domain }} --token ${{ inputs.token }} --email ${{ inputs.email }}
+      # surge --token ${token} --login ${email} ${distFolder} ${domain}.surge.sh
