@@ -10,7 +10,8 @@
     "@actions/core": "^1.11.1",
     "@actions/exec": "^1.1.1",
     "@types/bun": "latest",
-    "tsdown": "^0.15.5"
+    "tsdown": "^0.15.5",
+    "surge": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
