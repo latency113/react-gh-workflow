@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: oven/bun:1
+      env:
+        NODE_ENV: testing
     steps:
       - name: Print Bun version
         run: echo "Bun version:${{ vars.BUN_VERSION }}"
