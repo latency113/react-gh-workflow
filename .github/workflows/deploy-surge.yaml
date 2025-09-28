@@ -40,4 +40,4 @@ jobs:
           token: ${{ secrets.SURGE_TOKEN }}
           email: ${{ vars.SURGE_EMAIL }}
           dist-folder: dist
-          domain: work-shop1.surge.sh
+          domain: react-docker1.surge.sh
