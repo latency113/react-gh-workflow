@@ -1,0 +1,14 @@
+name: Install deps ands caching
+description: Install deps and caching
+runs:
+  using: composite
+  steps:
+    - name: Caching
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.bun/install/cache
+        key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
+    - name: Install depen
+      shell: bash
+      run: bun i
