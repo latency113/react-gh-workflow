@@ -21,11 +21,13 @@ jobs:
       - name: Print Api KEY
         run: echo "API_KEY:${{ secrets.API_KEY }}"
       - name: Clone repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
+        
         with:
           bun-version: ${{ vars.BUN_VERSION }}
+          bun-download-url: "https://github.com/oven-sh/bun/releases/latest/download/bun-linux-x64.zip"
       - name: Caching
         uses: actions/cache@v4
         with:
