@@ -5,7 +5,7 @@ inputs:
     description: bun version
     required: false
     default: 1.2.18
-runs:
+run:
   using: composite
   steps:
     - name: Setup Bun
