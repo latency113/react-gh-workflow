@@ -13,6 +13,6 @@ inputs:
   domain:
     description: surge domain
     required: true
-  runs:
-    using: node24
-    main: dist-folder/index.js
+runs:
+  using: node24
+  main: dist-folder/index.js
