@@ -21,7 +21,6 @@ async function main() {
 
   const command = `bun x surge --token ${token} --login ${email} ${distFolder} ${domain}.surge.sh`
 
-  await exec.exec("bun add surge");
   return exec.exec(command);
 }
 

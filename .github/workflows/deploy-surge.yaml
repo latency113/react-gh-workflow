@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Clone repo
         uses: actions/checkout@v5
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.2.18
       - name: Install and Cache
@@ -36,10 +34,6 @@ jobs:
         with:
           name: dist-folder
           path: dist
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: 1.2.18
       - name: Deploy
         uses: ./.github/actions/deploy-surge
         with:
